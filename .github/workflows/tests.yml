@@ -77,7 +77,7 @@ jobs:
 
       - name: ament_cpplint
         working-directory: ${{env.working-directory}}
-        run: if [ -d src ] ; then docker-compose run ros2-ws /bin/bash -c "ament_cpplint src/ test/"; fi
+        run: if [ -d src ] ; then docker-compose run ros2-ws /bin/bash -c "ament_cpplint src/ test/"; else echo "No files found in src/"; fi
 
   clang:
     name: Run ament_clang_format
@@ -93,7 +93,7 @@ jobs:
 
       - name: ament_clang_format
         working-directory: ${{env.working-directory}}
-        run: if [ -d src ]; then; docker-compose run ros2-ws /bin/bash -c "ament_clang_format src/ test/" fi
+        run:  if [ -d src ] ; then docker-compose run ros2-ws /bin/bash -c "ament_clang_format src/ test/"; else echo "No files found in src/"; fi
 
   # uncrustify:
   #   name: Run ament_uncrustify
