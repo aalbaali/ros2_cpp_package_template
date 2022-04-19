@@ -1,4 +1,4 @@
-name: Lint ROS2 package
+name: ament_linters
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
