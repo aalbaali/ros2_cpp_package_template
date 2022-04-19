@@ -77,7 +77,7 @@ jobs:
 
       - name: ament_cpplint
         working-directory: ${{env.working-directory}}
-        run: docker-compose run ros2-ws /bin/bash -c "ament_cpplint src/ test/"
+        run: if [ -d src ] ; then docker-compose run ros2-ws /bin/bash -c "ament_cpplint src/ test/"; fi
 
   clang:
     name: Run ament_clang_format
