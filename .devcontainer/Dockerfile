@@ -1,4 +1,4 @@
-FROM althack/ros2:galactic-dev
+FROM althack/ros2:foxy-dev
 
 ENV _colcon_cd_root=/workspace
 
