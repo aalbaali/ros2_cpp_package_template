@@ -93,7 +93,7 @@ jobs:
 
       - name: ament_clang_format
         working-directory: ${{env.working-directory}}
-        run: docker-compose run ros2-ws /bin/bash -c "ament_clang_format src/ test/"
+        run: if [ -d src ]; then; docker-compose run ros2-ws /bin/bash -c "ament_clang_format src/ test/" fi
 
   # uncrustify:
   #   name: Run ament_uncrustify
